@@ -1,0 +1,719 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		04C0390419E7ABE2004BBBDF /* KBMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C0390319E7ABE2004BBBDF /* KBMainViewController.swift */; };
+		04C0390619E7AC13004BBBDF /* KBSearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C0390519E7AC13004BBBDF /* KBSearchResult.swift */; };
+		9C3019C819D51CA200DFD3E3 /* KBTopBooksCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3019C719D51CA200DFD3E3 /* KBTopBooksCollectionViewController.swift */; };
+		9C3019CA19D51CCF00DFD3E3 /* KBTopBookCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3019C919D51CCF00DFD3E3 /* KBTopBookCollectionViewCell.swift */; };
+		9C3019CC19D51CF000DFD3E3 /* KBTopBookCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3019CB19D51CF000DFD3E3 /* KBTopBookCellViewController.swift */; };
+		9C3019D619D51DD800DFD3E3 /* KBMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3019D519D51DD800DFD3E3 /* KBMapViewController.swift */; };
+		9C3019D819D51E5000DFD3E3 /* KBSelectBookLocationMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3019D719D51E5000DFD3E3 /* KBSelectBookLocationMapViewController.swift */; };
+		9C3019E019D51F2D00DFD3E3 /* KBBooksDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3019DF19D51F2D00DFD3E3 /* KBBooksDetailsViewController.swift */; };
+		9C3019E219D51F6000DFD3E3 /* KBSearchBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3019E119D51F6000DFD3E3 /* KBSearchBookViewController.swift */; };
+		9C3019E419D51F7D00DFD3E3 /* KBPostBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3019E319D51F7D00DFD3E3 /* KBPostBookViewController.swift */; };
+		9C3019E619D520C100DFD3E3 /* KBProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3019E519D520C100DFD3E3 /* KBProfileViewController.swift */; };
+		9C3019E819D520F800DFD3E3 /* KBPresentDetailsViewSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3019E719D520F800DFD3E3 /* KBPresentDetailsViewSegue.swift */; };
+		9C3019EA19D5211100DFD3E3 /* KBSwipeToCloseSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3019E919D5211100DFD3E3 /* KBSwipeToCloseSegue.swift */; };
+		9C3019ED19D5213A00DFD3E3 /* KBTopBooksComputer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3019EC19D5213A00DFD3E3 /* KBTopBooksComputer.swift */; };
+		9C3019F119D5217D00DFD3E3 /* KBTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C3019F019D5217D00DFD3E3 /* KBTableViewCell.xib */; };
+		9C3019F319D5219700DFD3E3 /* KBUserPostedBookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3019F219D5219700DFD3E3 /* KBUserPostedBookCell.swift */; };
+		9C44DDB619D882C000674F65 /* KBWalkthroughViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C44DDB519D882C000674F65 /* KBWalkthroughViewController.m */; };
+		9C70192319CE6E04005D775A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C70192219CE6E04005D775A /* AppDelegate.swift */; };
+		9C70192C19CE6E04005D775A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C70192B19CE6E04005D775A /* Images.xcassets */; };
+		9C70192F19CE6E04005D775A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C70192D19CE6E04005D775A /* LaunchScreen.xib */; };
+		9C70193B19CE6E04005D775A /* KooBTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C70193A19CE6E04005D775A /* KooBTests.swift */; };
+		9C70194519CE6EA5005D775A /* KBConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C70194419CE6EA5005D775A /* KBConstants.swift */; };
+		9C70194C19CE6FF0005D775A /* KBTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C70194B19CE6FF0005D775A /* KBTabBarController.swift */; };
+		9C70194E19CE7043005D775A /* KBLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C70194D19CE7043005D775A /* KBLoginViewController.swift */; };
+		9C70195119CE7138005D775A /* KBPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C70195019CE7138005D775A /* KBPageViewController.swift */; };
+		9C70195719CE72DF005D775A /* KBSignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C70195619CE72DF005D775A /* KBSignupViewController.swift */; };
+		9C70196219CF2621005D775A /* KoobBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C70196119CF2621005D775A /* KoobBook.swift */; };
+		9C70196419CF2643005D775A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C70196319CF2643005D775A /* MapKit.framework */; };
+		9C8F712319D44F1B00CF6FDB /* Main_Universal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C8F712219D44F1B00CF6FDB /* Main_Universal.storyboard */; };
+		9C8F7CD119D13B7A00BCD161 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C8F7CCD19D13B5100BCD161 /* SystemConfiguration.framework */; };
+		9C8F7CD219D13B8000BCD161 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C8F7CCF19D13B6200BCD161 /* Security.framework */; };
+		9C8F7CD519D13BA200BCD161 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C8F7CD319D13B9900BCD161 /* CFNetwork.framework */; };
+		9C8F7CD719D13BB100BCD161 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C8F7CD619D13BB100BCD161 /* UIKit.framework */; };
+		9C8F7CD919D13BBB00BCD161 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C8F7CD819D13BBB00BCD161 /* Foundation.framework */; };
+		9C8F7CDB19D13BD100BCD161 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C8F7CDA19D13BD100BCD161 /* MobileCoreServices.framework */; };
+		9C8F7CDD19D13BDA00BCD161 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C8F7CDC19D13BDA00BCD161 /* QuartzCore.framework */; };
+		9C8F7CDF19D13BE400BCD161 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C8F7CDE19D13BE400BCD161 /* CoreGraphics.framework */; };
+		9C91B59019D62EC4001E9899 /* ModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C91B58D19D62EC4001E9899 /* ModelController.m */; };
+		9C91B59119D62EC4001E9899 /* SegmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C91B58F19D62EC4001E9899 /* SegmentViewController.m */; };
+		9C91B59619D62FEB001E9899 /* PageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C91B59519D62FEB001E9899 /* PageViewController.m */; };
+		9CB25A5619D262420071BF78 /* KBPageModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB25A5519D262420071BF78 /* KBPageModelController.swift */; };
+		9CBA793019D11D1B0086B443 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CBA792F19D11D1B0086B443 /* MBProgressHUD.m */; };
+		B1FD6C6719F3A69400AAACD1 /* KBBookCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FD6C6619F3A69400AAACD1 /* KBBookCollectionViewController.swift */; };
+		B1FD6C6919F3A6D800AAACD1 /* KBCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FD6C6819F3A6D800AAACD1 /* KBCollectionViewCell.swift */; };
+		B1FD6C6B19F3AF5A00AAACD1 /* KBBooksListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FD6C6A19F3AF5A00AAACD1 /* KBBooksListViewController.swift */; };
+		B1FD6C6D19F3B0DF00AAACD1 /* KBBooksListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FD6C6C19F3B0DF00AAACD1 /* KBBooksListTableViewController.swift */; };
+		B1FD6C6F19F3B4CA00AAACD1 /* KBTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FD6C6E19F3B4CA00AAACD1 /* KBTableViewCell.swift */; };
+		DA8C7E0419F45BDD000F84DA /* bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA8C7E0219F45BDD000F84DA /* bolts.framework */; };
+		DA8C7E0519F45BDD000F84DA /* facebooksdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA8C7E0319F45BDD000F84DA /* facebooksdk.framework */; };
+		DA8C7E0919F45BF6000F84DA /* bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA8C7E0619F45BF6000F84DA /* bolts.framework */; };
+		DA8C7E0A19F45BF6000F84DA /* parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA8C7E0719F45BF6000F84DA /* parse.framework */; };
+		DA8C7E0B19F45BF6000F84DA /* parsefacebookutils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA8C7E0819F45BF6000F84DA /* parsefacebookutils.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9C70193519CE6E04005D775A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9C70191519CE6E04005D775A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9C70191C19CE6E04005D775A;
+			remoteInfo = KooB;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		04C0390319E7ABE2004BBBDF /* KBMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KBMainViewController.swift; path = ../KBMainViewController.swift; sourceTree = "<group>"; };
+		04C0390519E7AC13004BBBDF /* KBSearchResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KBSearchResult.swift; path = ../KBSearchResult.swift; sourceTree = "<group>"; };
+		9C3019C719D51CA200DFD3E3 /* KBTopBooksCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KBTopBooksCollectionViewController.swift; sourceTree = "<group>"; };
+		9C3019C919D51CCF00DFD3E3 /* KBTopBookCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KBTopBookCollectionViewCell.swift; sourceTree = "<group>"; };
+		9C3019CB19D51CF000DFD3E3 /* KBTopBookCellViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KBTopBookCellViewController.swift; sourceTree = "<group>"; };
+		9C3019D519D51DD800DFD3E3 /* KBMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KBMapViewController.swift; sourceTree = "<group>"; };
+		9C3019D719D51E5000DFD3E3 /* KBSelectBookLocationMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KBSelectBookLocationMapViewController.swift; sourceTree = "<group>"; };
+		9C3019DF19D51F2D00DFD3E3 /* KBBooksDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KBBooksDetailsViewController.swift; sourceTree = "<group>"; };
+		9C3019E119D51F6000DFD3E3 /* KBSearchBookViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KBSearchBookViewController.swift; sourceTree = "<group>"; };
+		9C3019E319D51F7D00DFD3E3 /* KBPostBookViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KBPostBookViewController.swift; sourceTree = "<group>"; };
+		9C3019E519D520C100DFD3E3 /* KBProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KBProfileViewController.swift; sourceTree = "<group>"; };
+		9C3019E719D520F800DFD3E3 /* KBPresentDetailsViewSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KBPresentDetailsViewSegue.swift; sourceTree = "<group>"; };
+		9C3019E919D5211100DFD3E3 /* KBSwipeToCloseSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KBSwipeToCloseSegue.swift; sourceTree = "<group>"; };
+		9C3019EC19D5213A00DFD3E3 /* KBTopBooksComputer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KBTopBooksComputer.swift; sourceTree = "<group>"; };
+		9C3019F019D5217D00DFD3E3 /* KBTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KBTableViewCell.xib; sourceTree = "<group>"; };
+		9C3019F219D5219700DFD3E3 /* KBUserPostedBookCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KBUserPostedBookCell.swift; sourceTree = "<group>"; };
+		9C44DDB419D882C000674F65 /* KBWalkthroughViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KBWalkthroughViewController.h; sourceTree = "<group>"; };
+		9C44DDB519D882C000674F65 /* KBWalkthroughViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KBWalkthroughViewController.m; sourceTree = "<group>"; };
+		9C70191D19CE6E04005D775A /* KooB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KooB.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C70192119CE6E04005D775A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9C70192219CE6E04005D775A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9C70192B19CE6E04005D775A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		9C70192E19CE6E04005D775A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		9C70193419CE6E04005D775A /* KooBTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KooBTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C70193919CE6E04005D775A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9C70193A19CE6E04005D775A /* KooBTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KooBTests.swift; sourceTree = "<group>"; };
+		9C70194419CE6EA5005D775A /* KBConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KBConstants.swift; sourceTree = "<group>"; };
+		9C70194B19CE6FF0005D775A /* KBTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KBTabBarController.swift; sourceTree = "<group>"; };
+		9C70194D19CE7043005D775A /* KBLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KBLoginViewController.swift; sourceTree = "<group>"; };
+		9C70195019CE7138005D775A /* KBPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KBPageViewController.swift; sourceTree = "<group>"; };
+		9C70195619CE72DF005D775A /* KBSignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KBSignupViewController.swift; sourceTree = "<group>"; };
+		9C70195E19CE77BC005D775A /* KooB-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KooB-Bridging-Header.h"; sourceTree = "<group>"; };
+		9C70196119CF2621005D775A /* KoobBook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KoobBook.swift; sourceTree = "<group>"; };
+		9C70196319CF2643005D775A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		9C8F712219D44F1B00CF6FDB /* Main_Universal.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_Universal.storyboard; sourceTree = "<group>"; };
+		9C8F7CCD19D13B5100BCD161 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		9C8F7CCF19D13B6200BCD161 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		9C8F7CD319D13B9900BCD161 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		9C8F7CD619D13BB100BCD161 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		9C8F7CD819D13BBB00BCD161 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		9C8F7CDA19D13BD100BCD161 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		9C8F7CDC19D13BDA00BCD161 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		9C8F7CDE19D13BE400BCD161 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		9C91B58C19D62EC4001E9899 /* ModelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelController.h; sourceTree = "<group>"; };
+		9C91B58D19D62EC4001E9899 /* ModelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelController.m; sourceTree = "<group>"; };
+		9C91B58E19D62EC4001E9899 /* SegmentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SegmentViewController.h; sourceTree = "<group>"; };
+		9C91B58F19D62EC4001E9899 /* SegmentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SegmentViewController.m; sourceTree = "<group>"; };
+		9C91B59419D62FEB001E9899 /* PageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageViewController.h; sourceTree = "<group>"; };
+		9C91B59519D62FEB001E9899 /* PageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageViewController.m; sourceTree = "<group>"; };
+		9CB25A5519D262420071BF78 /* KBPageModelController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KBPageModelController.swift; sourceTree = "<group>"; };
+		9CBA792D19D11D1B0086B443 /* MBProgressHUD-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD-Prefix.pch"; sourceTree = "<group>"; };
+		9CBA792E19D11D1B0086B443 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		9CBA792F19D11D1B0086B443 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		B1FD6C6619F3A69400AAACD1 /* KBBookCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KBBookCollectionViewController.swift; path = ../KBBookCollectionViewController.swift; sourceTree = "<group>"; };
+		B1FD6C6819F3A6D800AAACD1 /* KBCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KBCollectionViewCell.swift; path = ../KBCollectionViewCell.swift; sourceTree = "<group>"; };
+		B1FD6C6A19F3AF5A00AAACD1 /* KBBooksListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KBBooksListViewController.swift; path = ../KBBooksListViewController.swift; sourceTree = "<group>"; };
+		B1FD6C6C19F3B0DF00AAACD1 /* KBBooksListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KBBooksListTableViewController.swift; path = ../KBBooksListTableViewController.swift; sourceTree = "<group>"; };
+		B1FD6C6E19F3B4CA00AAACD1 /* KBTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KBTableViewCell.swift; path = ../KBTableViewCell.swift; sourceTree = "<group>"; };
+		DA8C7E0219F45BDD000F84DA /* bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = bolts.framework; path = Frameworks/facebooksdk/bolts.framework; sourceTree = "<group>"; };
+		DA8C7E0319F45BDD000F84DA /* facebooksdk.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = facebooksdk.framework; path = Frameworks/facebooksdk/facebooksdk.framework; sourceTree = "<group>"; };
+		DA8C7E0619F45BF6000F84DA /* bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = bolts.framework; path = "Frameworks/parse-library/bolts.framework"; sourceTree = "<group>"; };
+		DA8C7E0719F45BF6000F84DA /* parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = parse.framework; path = "Frameworks/parse-library/parse.framework"; sourceTree = "<group>"; };
+		DA8C7E0819F45BF6000F84DA /* parsefacebookutils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = parsefacebookutils.framework; path = "Frameworks/parse-library/parsefacebookutils.framework"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9C70191A19CE6E04005D775A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA8C7E0919F45BF6000F84DA /* bolts.framework in Frameworks */,
+				DA8C7E0A19F45BF6000F84DA /* parse.framework in Frameworks */,
+				DA8C7E0B19F45BF6000F84DA /* parsefacebookutils.framework in Frameworks */,
+				DA8C7E0419F45BDD000F84DA /* bolts.framework in Frameworks */,
+				DA8C7E0519F45BDD000F84DA /* facebooksdk.framework in Frameworks */,
+				9C8F7CD519D13BA200BCD161 /* CFNetwork.framework in Frameworks */,
+				9C8F7CD219D13B8000BCD161 /* Security.framework in Frameworks */,
+				9C8F7CD119D13B7A00BCD161 /* SystemConfiguration.framework in Frameworks */,
+				9C70196419CF2643005D775A /* MapKit.framework in Frameworks */,
+				9C8F7CDF19D13BE400BCD161 /* CoreGraphics.framework in Frameworks */,
+				9C8F7CDD19D13BDA00BCD161 /* QuartzCore.framework in Frameworks */,
+				9C8F7CDB19D13BD100BCD161 /* MobileCoreServices.framework in Frameworks */,
+				9C8F7CD919D13BBB00BCD161 /* Foundation.framework in Frameworks */,
+				9C8F7CD719D13BB100BCD161 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C70193119CE6E04005D775A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9C3019EB19D5212A00DFD3E3 /* Custom Segues */ = {
+			isa = PBXGroup;
+			children = (
+				9C3019E719D520F800DFD3E3 /* KBPresentDetailsViewSegue.swift */,
+				9C3019E919D5211100DFD3E3 /* KBSwipeToCloseSegue.swift */,
+			);
+			name = "Custom Segues";
+			sourceTree = "<group>";
+		};
+		9C70191419CE6E04005D775A = {
+			isa = PBXGroup;
+			children = (
+				9C70191F19CE6E04005D775A /* KooB */,
+				9C70193719CE6E04005D775A /* KooBTests */,
+				9C70191E19CE6E04005D775A /* Products */,
+				DA8C7E0619F45BF6000F84DA /* bolts.framework */,
+				DA8C7E0719F45BF6000F84DA /* parse.framework */,
+				DA8C7E0819F45BF6000F84DA /* parsefacebookutils.framework */,
+				DA8C7E0219F45BDD000F84DA /* bolts.framework */,
+				DA8C7E0319F45BDD000F84DA /* facebooksdk.framework */,
+				9C8F7CD319D13B9900BCD161 /* CFNetwork.framework */,
+				9C8F7CCF19D13B6200BCD161 /* Security.framework */,
+				9C8F7CCD19D13B5100BCD161 /* SystemConfiguration.framework */,
+				9C70196319CF2643005D775A /* MapKit.framework */,
+				9C8F7CDE19D13BE400BCD161 /* CoreGraphics.framework */,
+				9C8F7CDC19D13BDA00BCD161 /* QuartzCore.framework */,
+				9C8F7CDA19D13BD100BCD161 /* MobileCoreServices.framework */,
+				9C8F7CD819D13BBB00BCD161 /* Foundation.framework */,
+				9C8F7CD619D13BB100BCD161 /* UIKit.framework */,
+			);
+			sourceTree = "<group>";
+		};
+		9C70191E19CE6E04005D775A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9C70191D19CE6E04005D775A /* KooB.app */,
+				9C70193419CE6E04005D775A /* KooBTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9C70191F19CE6E04005D775A /* KooB */ = {
+			isa = PBXGroup;
+			children = (
+				9C8F712219D44F1B00CF6FDB /* Main_Universal.storyboard */,
+				9C70192D19CE6E04005D775A /* LaunchScreen.xib */,
+				9C70192B19CE6E04005D775A /* Images.xcassets */,
+				04C0390319E7ABE2004BBBDF /* KBMainViewController.swift */,
+				B1FD6C6E19F3B4CA00AAACD1 /* KBTableViewCell.swift */,
+				9C3019F019D5217D00DFD3E3 /* KBTableViewCell.xib */,
+				9C3019F219D5219700DFD3E3 /* KBUserPostedBookCell.swift */,
+				04C0390519E7AC13004BBBDF /* KBSearchResult.swift */,
+				9C91B59219D62ED7001E9899 /* Objective C files */,
+				9C70192219CE6E04005D775A /* AppDelegate.swift */,
+				9C70194B19CE6FF0005D775A /* KBTabBarController.swift */,
+				9C3019E319D51F7D00DFD3E3 /* KBPostBookViewController.swift */,
+				9C3019E519D520C100DFD3E3 /* KBProfileViewController.swift */,
+				B1FD6C6C19F3B0DF00AAACD1 /* KBBooksListTableViewController.swift */,
+				B1FD6C6A19F3AF5A00AAACD1 /* KBBooksListViewController.swift */,
+				9C3019DF19D51F2D00DFD3E3 /* KBBooksDetailsViewController.swift */,
+				9C3019E119D51F6000DFD3E3 /* KBSearchBookViewController.swift */,
+				9C3019D519D51DD800DFD3E3 /* KBMapViewController.swift */,
+				9C3019D719D51E5000DFD3E3 /* KBSelectBookLocationMapViewController.swift */,
+				9C3019C719D51CA200DFD3E3 /* KBTopBooksCollectionViewController.swift */,
+				9C3019C919D51CCF00DFD3E3 /* KBTopBookCollectionViewCell.swift */,
+				9C3019CB19D51CF000DFD3E3 /* KBTopBookCellViewController.swift */,
+				B1FD6C6619F3A69400AAACD1 /* KBBookCollectionViewController.swift */,
+				B1FD6C6819F3A6D800AAACD1 /* KBCollectionViewCell.swift */,
+				9C70194D19CE7043005D775A /* KBLoginViewController.swift */,
+				9C70195619CE72DF005D775A /* KBSignupViewController.swift */,
+				9C70195019CE7138005D775A /* KBPageViewController.swift */,
+				9CB25A5519D262420071BF78 /* KBPageModelController.swift */,
+				9C70194419CE6EA5005D775A /* KBConstants.swift */,
+				9C70196119CF2621005D775A /* KoobBook.swift */,
+				9C3019EC19D5213A00DFD3E3 /* KBTopBooksComputer.swift */,
+				9C3019EB19D5212A00DFD3E3 /* Custom Segues */,
+				9C70192019CE6E04005D775A /* Supporting Files */,
+			);
+			path = KooB;
+			sourceTree = "<group>";
+		};
+		9C70192019CE6E04005D775A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9C70195E19CE77BC005D775A /* KooB-Bridging-Header.h */,
+				9CBA792D19D11D1B0086B443 /* MBProgressHUD-Prefix.pch */,
+				9CBA792E19D11D1B0086B443 /* MBProgressHUD.h */,
+				9CBA792F19D11D1B0086B443 /* MBProgressHUD.m */,
+				9C70192119CE6E04005D775A /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9C70193719CE6E04005D775A /* KooBTests */ = {
+			isa = PBXGroup;
+			children = (
+				9C70193A19CE6E04005D775A /* KooBTests.swift */,
+				9C70193819CE6E04005D775A /* Supporting Files */,
+			);
+			path = KooBTests;
+			sourceTree = "<group>";
+		};
+		9C70193819CE6E04005D775A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9C70193919CE6E04005D775A /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9C91B59219D62ED7001E9899 /* Objective C files */ = {
+			isa = PBXGroup;
+			children = (
+				9C91B58E19D62EC4001E9899 /* SegmentViewController.h */,
+				9C91B58F19D62EC4001E9899 /* SegmentViewController.m */,
+				9C91B59419D62FEB001E9899 /* PageViewController.h */,
+				9C91B59519D62FEB001E9899 /* PageViewController.m */,
+				9C91B58C19D62EC4001E9899 /* ModelController.h */,
+				9C91B58D19D62EC4001E9899 /* ModelController.m */,
+				9C44DDB419D882C000674F65 /* KBWalkthroughViewController.h */,
+				9C44DDB519D882C000674F65 /* KBWalkthroughViewController.m */,
+			);
+			name = "Objective C files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9C70191C19CE6E04005D775A /* KooB */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9C70193E19CE6E04005D775A /* Build configuration list for PBXNativeTarget "KooB" */;
+			buildPhases = (
+				9C70191919CE6E04005D775A /* Sources */,
+				9C70191A19CE6E04005D775A /* Frameworks */,
+				9C70191B19CE6E04005D775A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KooB;
+			productName = KooB;
+			productReference = 9C70191D19CE6E04005D775A /* KooB.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9C70193319CE6E04005D775A /* KooBTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9C70194119CE6E04005D775A /* Build configuration list for PBXNativeTarget "KooBTests" */;
+			buildPhases = (
+				9C70193019CE6E04005D775A /* Sources */,
+				9C70193119CE6E04005D775A /* Frameworks */,
+				9C70193219CE6E04005D775A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9C70193619CE6E04005D775A /* PBXTargetDependency */,
+			);
+			name = KooBTests;
+			productName = KooBTests;
+			productReference = 9C70193419CE6E04005D775A /* KooBTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9C70191519CE6E04005D775A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = "Developers Guild";
+				TargetAttributes = {
+					9C70191C19CE6E04005D775A = {
+						CreatedOnToolsVersion = 6.0.1;
+					};
+					9C70193319CE6E04005D775A = {
+						CreatedOnToolsVersion = 6.0.1;
+						TestTargetID = 9C70191C19CE6E04005D775A;
+					};
+				};
+			};
+			buildConfigurationList = 9C70191819CE6E04005D775A /* Build configuration list for PBXProject "KooB" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9C70191419CE6E04005D775A;
+			productRefGroup = 9C70191E19CE6E04005D775A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9C70191C19CE6E04005D775A /* KooB */,
+				9C70193319CE6E04005D775A /* KooBTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9C70191B19CE6E04005D775A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C3019F119D5217D00DFD3E3 /* KBTableViewCell.xib in Resources */,
+				9C8F712319D44F1B00CF6FDB /* Main_Universal.storyboard in Resources */,
+				9C70192F19CE6E04005D775A /* LaunchScreen.xib in Resources */,
+				9C70192C19CE6E04005D775A /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C70193219CE6E04005D775A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9C70191919CE6E04005D775A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C3019F319D5219700DFD3E3 /* KBUserPostedBookCell.swift in Sources */,
+				9C70194C19CE6FF0005D775A /* KBTabBarController.swift in Sources */,
+				9C3019E419D51F7D00DFD3E3 /* KBPostBookViewController.swift in Sources */,
+				9C70192319CE6E04005D775A /* AppDelegate.swift in Sources */,
+				9C70194E19CE7043005D775A /* KBLoginViewController.swift in Sources */,
+				04C0390419E7ABE2004BBBDF /* KBMainViewController.swift in Sources */,
+				9CB25A5619D262420071BF78 /* KBPageModelController.swift in Sources */,
+				9C70195119CE7138005D775A /* KBPageViewController.swift in Sources */,
+				B1FD6C6F19F3B4CA00AAACD1 /* KBTableViewCell.swift in Sources */,
+				9C70195719CE72DF005D775A /* KBSignupViewController.swift in Sources */,
+				9C3019D819D51E5000DFD3E3 /* KBSelectBookLocationMapViewController.swift in Sources */,
+				9C3019E219D51F6000DFD3E3 /* KBSearchBookViewController.swift in Sources */,
+				B1FD6C6719F3A69400AAACD1 /* KBBookCollectionViewController.swift in Sources */,
+				9C3019E619D520C100DFD3E3 /* KBProfileViewController.swift in Sources */,
+				9C3019ED19D5213A00DFD3E3 /* KBTopBooksComputer.swift in Sources */,
+				9C3019CC19D51CF000DFD3E3 /* KBTopBookCellViewController.swift in Sources */,
+				04C0390619E7AC13004BBBDF /* KBSearchResult.swift in Sources */,
+				9C3019D619D51DD800DFD3E3 /* KBMapViewController.swift in Sources */,
+				9C3019E819D520F800DFD3E3 /* KBPresentDetailsViewSegue.swift in Sources */,
+				9C44DDB619D882C000674F65 /* KBWalkthroughViewController.m in Sources */,
+				9C3019C819D51CA200DFD3E3 /* KBTopBooksCollectionViewController.swift in Sources */,
+				9CBA793019D11D1B0086B443 /* MBProgressHUD.m in Sources */,
+				9C3019E019D51F2D00DFD3E3 /* KBBooksDetailsViewController.swift in Sources */,
+				9C3019CA19D51CCF00DFD3E3 /* KBTopBookCollectionViewCell.swift in Sources */,
+				9C91B59619D62FEB001E9899 /* PageViewController.m in Sources */,
+				9C91B59119D62EC4001E9899 /* SegmentViewController.m in Sources */,
+				B1FD6C6919F3A6D800AAACD1 /* KBCollectionViewCell.swift in Sources */,
+				B1FD6C6D19F3B0DF00AAACD1 /* KBBooksListTableViewController.swift in Sources */,
+				9C70194519CE6EA5005D775A /* KBConstants.swift in Sources */,
+				9C91B59019D62EC4001E9899 /* ModelController.m in Sources */,
+				B1FD6C6B19F3AF5A00AAACD1 /* KBBooksListViewController.swift in Sources */,
+				9C70196219CF2621005D775A /* KoobBook.swift in Sources */,
+				9C3019EA19D5211100DFD3E3 /* KBSwipeToCloseSegue.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C70193019CE6E04005D775A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C70193B19CE6E04005D775A /* KooBTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9C70193619CE6E04005D775A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9C70191C19CE6E04005D775A /* KooB */;
+			targetProxy = 9C70193519CE6E04005D775A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		9C70192D19CE6E04005D775A /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9C70192E19CE6E04005D775A /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9C70193C19CE6E04005D775A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9C70193D19CE6E04005D775A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9C70193F19CE6E04005D775A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/andreaborghi/Downloads/parse-library-1",
+					"/Users/andreaborghi/Downloads/KooBSwift/parse-library-1",
+					"$(USER_LIBRARY_DIR)/Mobile",
+					"Documents/com~apple~CloudDocs/Developer/KooBSwift/parse-library-1",
+					"$(USER_LIBRARY_DIR)/Mobile",
+					"Documents/com~apple~CloudDocs/Developer/KooBSwift/parse-library-1",
+					"$(USER_LIBRARY_DIR)/Mobile",
+					"Documents/com~apple~CloudDocs/Developer/KooBSwift/parse-library-1",
+					"$(USER_LIBRARY_DIR)/Mobile",
+					"Documents/com~apple~CloudDocs/Developer/KooBSwift/parse-library-1",
+					"$(USER_LIBRARY_DIR)/Mobile",
+					"Documents/com~apple~CloudDocs/Developer/KooBSwift/parse-library-1",
+					"$(USER_LIBRARY_DIR)/Mobile",
+					"Documents/com~apple~CloudDocs/Developer/KooBSwift/parse-library-1",
+					"$(USER_LIBRARY_DIR)/Mobile",
+					"Documents/com~apple~CloudDocs/Developer/KooBSwift/parse-library-1",
+					"$(USER_LIBRARY_DIR)/Mobile",
+					"Documents/com~apple~CloudDocs/Developer/KooBSwift/parse-library-1",
+					"$(USER_LIBRARY_DIR)/Mobile",
+					"Documents/com~apple~CloudDocs/Developer/KooBSwift/parse-library-1",
+					"$(USER_LIBRARY_DIR)/Mobile",
+					"Documents/com~apple~CloudDocs/Developer/KooBSwift/parse-library-1",
+					"$(USER_LIBRARY_DIR)/Mobile",
+					"Documents/com~apple~CloudDocs/Developer/KooBSwift/FacebookSDK",
+					"$(USER_LIBRARY_DIR)/Mobile",
+					"Documents/com~apple~CloudDocs/Developer/KooBSwift/parse-library-1",
+					"$(USER_LIBRARY_DIR)/Mobile",
+					"Documents/com~apple~CloudDocs/Developer/KooBSwift/FacebookSDK",
+					"/Users/E/Documents/KooBSwift/parse-library-1",
+					/Users/E/Documents/KooBSwift/facebooksdk,
+					/Users/davidphan/Documents/AppDevelopment/KooBSwift/FacebookSDK,
+					"/Users/davidphan/Documents/AppDevelopment/KooBSwift/parse-library-1",
+					/Users/davidphan/Documents/AppDevelopment/KooBSwift/facebooksdk,
+					"$(PROJECT_DIR)",
+					"/Users/hidan/Downloads/KooBSwift/parse-library-1",
+					/Users/hidan/Downloads/KooBSwift/facebooksdk,
+					"$(PROJECT_DIR)/Frameworks/facebooksdk",
+					"$(PROJECT_DIR)/Frameworks/parse-library",
+				);
+				INFOPLIST_FILE = KooB/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "KooB/KooB-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		9C70194019CE6E04005D775A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/andreaborghi/Downloads/parse-library-1",
+					"/Users/andreaborghi/Downloads/KooBSwift/parse-library-1",
+					"$(USER_LIBRARY_DIR)/Mobile",
+					"Documents/com~apple~CloudDocs/Developer/KooBSwift/parse-library-1",
+					"$(USER_LIBRARY_DIR)/Mobile",
+					"Documents/com~apple~CloudDocs/Developer/KooBSwift/parse-library-1",
+					"$(USER_LIBRARY_DIR)/Mobile",
+					"Documents/com~apple~CloudDocs/Developer/KooBSwift/parse-library-1",
+					"$(USER_LIBRARY_DIR)/Mobile",
+					"Documents/com~apple~CloudDocs/Developer/KooBSwift/parse-library-1",
+					"$(USER_LIBRARY_DIR)/Mobile",
+					"Documents/com~apple~CloudDocs/Developer/KooBSwift/parse-library-1",
+					"$(USER_LIBRARY_DIR)/Mobile",
+					"Documents/com~apple~CloudDocs/Developer/KooBSwift/parse-library-1",
+					"$(USER_LIBRARY_DIR)/Mobile",
+					"Documents/com~apple~CloudDocs/Developer/KooBSwift/parse-library-1",
+					"$(USER_LIBRARY_DIR)/Mobile",
+					"Documents/com~apple~CloudDocs/Developer/KooBSwift/parse-library-1",
+					"$(USER_LIBRARY_DIR)/Mobile",
+					"Documents/com~apple~CloudDocs/Developer/KooBSwift/parse-library-1",
+					"$(USER_LIBRARY_DIR)/Mobile",
+					"Documents/com~apple~CloudDocs/Developer/KooBSwift/parse-library-1",
+					"$(USER_LIBRARY_DIR)/Mobile",
+					"Documents/com~apple~CloudDocs/Developer/KooBSwift/FacebookSDK",
+					"$(USER_LIBRARY_DIR)/Mobile",
+					"Documents/com~apple~CloudDocs/Developer/KooBSwift/parse-library-1",
+					"$(USER_LIBRARY_DIR)/Mobile",
+					"Documents/com~apple~CloudDocs/Developer/KooBSwift/FacebookSDK",
+					"/Users/E/Documents/KooBSwift/parse-library-1",
+					/Users/E/Documents/KooBSwift/facebooksdk,
+					/Users/davidphan/Documents/AppDevelopment/KooBSwift/FacebookSDK,
+					"/Users/davidphan/Documents/AppDevelopment/KooBSwift/parse-library-1",
+					/Users/davidphan/Documents/AppDevelopment/KooBSwift/facebooksdk,
+					"$(PROJECT_DIR)",
+					"/Users/hidan/Downloads/KooBSwift/parse-library-1",
+					/Users/hidan/Downloads/KooBSwift/facebooksdk,
+					"$(PROJECT_DIR)/Frameworks/facebooksdk",
+					"$(PROJECT_DIR)/Frameworks/parse-library",
+				);
+				INFOPLIST_FILE = KooB/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "KooB/KooB-Bridging-Header.h";
+			};
+			name = Release;
+		};
+		9C70194219CE6E04005D775A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = KooBTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KooB.app/KooB";
+			};
+			name = Debug;
+		};
+		9C70194319CE6E04005D775A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = KooBTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KooB.app/KooB";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9C70191819CE6E04005D775A /* Build configuration list for PBXProject "KooB" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9C70193C19CE6E04005D775A /* Debug */,
+				9C70193D19CE6E04005D775A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9C70193E19CE6E04005D775A /* Build configuration list for PBXNativeTarget "KooB" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9C70193F19CE6E04005D775A /* Debug */,
+				9C70194019CE6E04005D775A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9C70194119CE6E04005D775A /* Build configuration list for PBXNativeTarget "KooBTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9C70194219CE6E04005D775A /* Debug */,
+				9C70194319CE6E04005D775A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9C70191519CE6E04005D775A /* Project object */;
+}
