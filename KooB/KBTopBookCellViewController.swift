@@ -14,7 +14,7 @@ class KBTopBookCellViewController: UIViewController {
         let theImage = bookAsObject?.objectForKey("image") as PFFile
         theImage.getDataInBackgroundWithBlock { (imageData, error) -> Void in
             if error == nil {
-                completionBlock(image: UIImage(data: imageData))
+                completionBlock(image: UIImage(data: imageData)!)
             }
         }
     }

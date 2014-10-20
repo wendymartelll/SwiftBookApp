@@ -42,7 +42,7 @@ class KBTopBooksCollectionViewController: UICollectionViewController {
     }
     
     func animateTopBooksEntrance() {
-        collectionView?.reloadData()
+        collectionView.reloadData()
         UIView.animateWithDuration(1.5, delay: 0.5, usingSpringWithDamping: 0.5, initialSpringVelocity: 1, options: nil, animations: { () -> Void in
             self.collView.contentOffset = CGPointMake(self.collView!.frame.size.width, 0)
             }, completion: nil)

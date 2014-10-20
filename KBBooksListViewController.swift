@@ -59,7 +59,7 @@ class KBBooksListViewController: UIViewController {
             cell = UITableViewCell(style: .Default, reuseIdentifier: categoryCell)
         }
         
-        cell.textLabel!.text = self.categories[indexPath.row]
+        cell.textLabel.text = self.categories[indexPath.row]
         
         return cell!
     }

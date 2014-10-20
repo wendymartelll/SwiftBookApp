@@ -11,17 +11,17 @@
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>AA2F8447EADA96C892CD076EABBE55EFC3CE56D3</key>
-		<string>https://github.com/boboborghi/KooBSwift.git</string>
+		<string>https://github.com/davidphan75/SwiftBookApp</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>KooB/KooB.xcodeproj</string>
+	<string>KooB.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>AA2F8447EADA96C892CD076EABBE55EFC3CE56D3</key>
-		<string>../../..</string>
+		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/boboborghi/KooBSwift.git</string>
+	<string>https://github.com/davidphan75/SwiftBookApp</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
@@ -34,7 +34,7 @@
 			<key>IDESourceControlWCCIdentifierKey</key>
 			<string>AA2F8447EADA96C892CD076EABBE55EFC3CE56D3</string>
 			<key>IDESourceControlWCCName</key>
-			<string>KooBSwift</string>
+			<string>SwiftBookApp</string>
 		</dict>
 	</array>
 </dict>

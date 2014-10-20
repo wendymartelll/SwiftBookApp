@@ -184,7 +184,7 @@ class KBMapViewController: UIViewController, CLLocationManagerDelegate, MKMapVie
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if sender!.isKindOfClass(MKAnnotationView) {
-            prepareViewController(segue.destinationViewController, forSegue: segue.identifier, toShowAnnotation: (sender? as MKAnnotationView).annotation!)
+            prepareViewController(segue.destinationViewController, forSegue: segue.identifier!, toShowAnnotation: (sender? as MKAnnotationView).annotation!)
         }
     }
     

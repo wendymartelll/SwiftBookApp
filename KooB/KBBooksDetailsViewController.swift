@@ -100,7 +100,7 @@ class KBBooksDetailsViewController: UIViewController, UIScrollViewDelegate {
             
             let phoneNumber: String = (bookSeller["mobile"] as String)
             
-            UIApplication.sharedApplication().openURL(NSURL(string: "tell://\(phoneNumber)"))
+            UIApplication.sharedApplication().openURL(NSURL(string: "tell://\(phoneNumber)")!)
         })
     }
     
@@ -111,7 +111,7 @@ class KBBooksDetailsViewController: UIViewController, UIScrollViewDelegate {
             
             let phoneNumber: String = (bookSeller["mobile"] as String)
             
-            UIApplication.sharedApplication().openURL(NSURL(string: "sms:\(phoneNumber)"))
+            UIApplication.sharedApplication().openURL(NSURL(string: "sms:\(phoneNumber)")!)
         })
     }
     

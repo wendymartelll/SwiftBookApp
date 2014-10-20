@@ -17,11 +17,11 @@ class KBBookCollectionViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         NSLog("%d", allCategories.count)
-        collectionView?.backgroundColor = nil
-        collectionView?.showsHorizontalScrollIndicator = false
-        collectionView?.showsVerticalScrollIndicator = false
-        originalFrame = collectionView?.frame
-        originalContentOffset = CGPointMake(collectionView!.contentOffset.x, collectionView!.contentOffset.y)
+        collectionView.backgroundColor = nil
+        collectionView.showsHorizontalScrollIndicator = false
+        collectionView.showsVerticalScrollIndicator = false
+        originalFrame = collectionView.frame
+        originalContentOffset = CGPointMake(collectionView.contentOffset.x, collectionView.contentOffset.y)
     }
     
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
@@ -72,23 +72,23 @@ class KBBookCollectionViewController: UICollectionViewController {
     }
     
     override func scrollViewDidScroll(scrollView: UIScrollView) {
-        collectionView?.bounces = true
-        var scrollPoint = CGPointMake(0, collectionView!.contentOffset.y)
+        collectionView.bounces = true
+        var scrollPoint = CGPointMake(0, collectionView.contentOffset.y)
         let parent = parentViewController as KBMainViewController
         
-        if (collectionView!.contentOffset.y > 0 && collectionView!.contentOffset.y < originalFrame!.size.height / 3){
-            collectionView?.bounces = false
-            var tableFrame = collectionView!.frame
+        if (collectionView.contentOffset.y > 0 && collectionView.contentOffset.y < originalFrame!.size.height / 3){
+            collectionView.bounces = false
+            var tableFrame = collectionView.frame
             tableFrame.size.height = originalFrame!.size.height / 3 + scrollPoint.y
-            collectionView!.frame = tableFrame
+            collectionView.frame = tableFrame
             parent.ScrollView.setContentOffset(scrollPoint, animated: false)
-        } else if (collectionView!.contentOffset.y == 0){
+        } else if (collectionView.contentOffset.y == 0){
             parent.ScrollView.setContentOffset(CGPointMake(0, CGFloat(-iPhoneStatusBarSize) - navigationController!.navigationBar.frame.size.height), animated: true)
-        } else if (collectionView!.contentOffset.y >= originalFrame!.size.height / 3) {
-            collectionView?.bounces = false;
-            var tableFrame = collectionView!.frame
+        } else if (collectionView.contentOffset.y >= originalFrame!.size.height / 3) {
+            collectionView.bounces = false;
+            var tableFrame = collectionView.frame
             tableFrame.size.height = parent.view.frame.size.height
-            collectionView?.frame = tableFrame
+            collectionView.frame = tableFrame
             parent.ScrollView.setContentOffset(CGPointMake(0, parent.allBooksLabel.center.y - (parent.categoriesLabel.frame.size.height * 3)), animated: true)
         }
     }
