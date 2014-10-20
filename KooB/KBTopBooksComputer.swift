@@ -31,12 +31,12 @@ class KBTopBooksComputer {
     }
     
     func queryForTopBook(#category: String) {
-        let query = PFQuery(className: category)
-        query.whereKey("Subject", equalTo: category)
+        let query = PFQuery(className: "Books_DataBase")
+        query.whereKey("Subject", equalTo: category as NSString)
         query.getFirstObjectInBackgroundWithBlock { (object: PFObject!, error: NSError!) -> Void in
             if error == nil {
                 let currentBook = KoobBook(PFObject: object)
-                self.topBooks?.append(currentBook)
+                self.topBooks!.append(currentBook)
                 // Notification?
             }
         }

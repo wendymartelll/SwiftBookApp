@@ -51,10 +51,10 @@ class KoobBook: NSObject, MKAnnotation {
         anObject.fetchIfNeeded()
         
         self.object = anObject
-        self.geopoint = (anObject.objectForKey("Location") as PFGeoPoint)
-        self.user = (anObject.objectForKey("User") as PFUser)
+        self.geopoint = (anObject.objectForKey("Location") as? PFGeoPoint)
+        self.user = (anObject.objectForKey("User") as? PFUser)
         self.title = (anObject.objectForKey("BookName") as String)
-        self.subtitle = (anObject.objectForKey("sellerName") as String)
+        self.subtitle = (anObject.objectForKey("sellerName") as? String)!
         self.author = (anObject.objectForKey("AuthorName") as String)
         // Condition?
         self.price = (anObject.objectForKey("Price") as Double)

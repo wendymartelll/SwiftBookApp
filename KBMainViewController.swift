@@ -20,7 +20,6 @@ class KBMainViewController: UIViewController, UISearchBarDelegate {
     var categories = [String]?()
     
     override func viewDidLoad() {
-        
         SearchBar.delegate = self;
         super.viewDidLoad()
         ScrollView.scrollEnabled = false
@@ -32,10 +31,8 @@ class KBMainViewController: UIViewController, UISearchBarDelegate {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        if PFUser.currentUser() != nil {
-           
-        }else{
-             performSegueWithIdentifier("LoginScreen", sender: self)
+        if PFUser.currentUser() == nil {
+            performSegueWithIdentifier("LoginScreen", sender: self)
         }
     }
     
@@ -55,17 +52,13 @@ class KBMainViewController: UIViewController, UISearchBarDelegate {
         self.path = nil
         self.performSegueWithIdentifier("showTappedCategory", sender: self)
     }
-    /*
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
-        
-                if segue.identifier == "Search" {
-                    let vc = segue.destinationViewController as KBSearchResult
-                    vc.Search = SearchBar.text
-               }
-        
-    }
-*/
+//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+//        if segue.identifier == "Search" {
+//            let vc = segue.destinationViewController as KBSearchResult
+//            vc.Search = SearchBar.text
+//        }
+//    }
     
     override func canPerformUnwindSegueAction(action: Selector, fromViewController: UIViewController, withSender sender: AnyObject) -> Bool {
         return true

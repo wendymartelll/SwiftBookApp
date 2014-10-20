@@ -10,16 +10,17 @@ import Foundation
 import UIKit
 
 class KBTopBookCollectionViewCell: UICollectionViewCell {
- /*   var imageView: UIImageView?
+    var imageView: UIImageView
     var image: UIImage?
     var loading: Bool = false
     
     override init(frame: CGRect) {
+        imageView = UIImageView()
+        imageView.backgroundColor = UIColor(white: 0.95, alpha: 1.0)
         super.init(frame: frame)
-        imageView?.backgroundColor = UIColor(white: 0.95, alpha: 1.0)
-        contentView.addSubview(imageView!)
+        contentView.addSubview(imageView)
     }
-
+    
     required init(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -28,18 +29,18 @@ class KBTopBookCollectionViewCell: UICollectionViewCell {
         if let book = forBook {
             loading = true
             KBTopBookCellViewController.imageForBook(book: book, completionBlock: { (image) -> () in
-                self.imageView?.image = image
+                self.imageView.image = image
                 self.setNeedsLayout()
                 self.loading = false
             })
         } else {
-            imageView?.image = UIImage(named: "BookLoad")
+            imageView.image = UIImage(named: "BookLoad")
         }
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        imageView?.frame = contentView.bounds
+        imageView.frame = contentView.bounds
     }
     
     func coverIsLoaded() -> Bool {
@@ -48,7 +49,5 @@ class KBTopBookCollectionViewCell: UICollectionViewCell {
         } else {
             return false
         }
-    }*/
-    
-    
+    }
 }

@@ -10,11 +10,12 @@ import Foundation
 import UIKit
 
 class KBTopBooksCollectionViewController: UICollectionViewController {
-  /*  @IBOutlet var collView: UICollectionView!
+    @IBOutlet var collView: UICollectionView!
     var originatingPoint: CGPoint?
     var topBooks = [KoobBook]?()
     var computer = KBTopBooksComputer?()
     let reuseIdentifier = "Cell"
+    //let categories = ["Accounting","Administration of Justice","Anthropology","Arts","Astronomy","Automotive Technology","Biology","Business","Cantonese","Career Life Planning","Chemistry","Child Development","Computer Aided Design","Computer Information System","Counseling","Dance","Economics","Education","Engeineering","ESL","English","Enviromental Science","Film and Television","French","Geography","Geology","German","Guidance","Health Technology","Health","Hindi","History","Human Development","Humanities","Intercultural Studies","International Studies","Italian","Japanese","Journalism","Korean","Language Arts","Learning Assistance","Librarty","Linguistics","Mandarin","Manufacturing","Mathematics","Meterology","Music","Nursing","Nutrition","Paralegal","Persian","Philosophy","Photography","Physical Education","Physics","Political Science","Pyschology","Reading","Real Estate","Russian","Sign Language","Skills","Social Science","Sociology","Spanish","Speech","Theater Arts","Vietnamese","Women Studies","Misc"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +33,7 @@ class KBTopBooksCollectionViewController: UICollectionViewController {
             if computer == nil {
                 computer = KBTopBooksComputer(categories: KBBooksListViewController.allCategories())
             }
-            computer?.getTopBooksAsync({ (topBooks) -> () in
+            computer!.getTopBooksAsync({ (topBooks) -> () in
                 self.topBooks = topBooks
             })
         } else {
@@ -44,7 +45,7 @@ class KBTopBooksCollectionViewController: UICollectionViewController {
         collectionView?.reloadData()
         UIView.animateWithDuration(1.5, delay: 0.5, usingSpringWithDamping: 0.5, initialSpringVelocity: 1, options: nil, animations: { () -> Void in
             self.collView.contentOffset = CGPointMake(self.collView!.frame.size.width, 0)
-        }, completion: nil)
+            }, completion: nil)
     }
     
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
@@ -65,9 +66,18 @@ class KBTopBooksCollectionViewController: UICollectionViewController {
             let destinationViewController = segue.destinationViewController as KBBooksDetailsViewController
             let indexPath = sender as NSIndexPath
             let object = topBooks![indexPath.row]
-            
         }
-    }*/
+    }
     
-    // Crashes, Forgot to return Cell :) ?
+    override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        var cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as KBTopBookCollectionViewCell
+        
+        if topBooks?.count != 0 && indexPath.row < topBooks?.count {
+            cell.setCover(topBooks![indexPath.row] as KoobBook)
+        } else {
+            cell.setCover(nil)
+        }
+        
+        return cell
+    }
 }

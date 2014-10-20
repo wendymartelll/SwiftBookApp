@@ -10,17 +10,11 @@ import Foundation
 import UIKit
 
 
-class KBSearchResult: UIViewController
-{
-    
-
+class KBSearchResult: UIViewController {
     @IBOutlet var SearchWord:UILabel!
     var Search:String = ""
     
     override func viewDidLoad() {
         SearchWord.text = Search;
-        
     }
-    
-    
 }

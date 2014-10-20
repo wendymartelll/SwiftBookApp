@@ -11,6 +11,7 @@ import UIKit
 import MapKit
 
 class KBPostBookViewController: UIViewController, UIPickerViewDelegate, UIActionSheetDelegate, UIImagePickerControllerDelegate, MBProgressHUDDelegate, CLLocationManagerDelegate, SelectBookLocationMapViewControllerDelegate {
+    
     func userDidSelectLocation(location: CLLocationCoordinate2D, currentView: UIViewController, radius: Double) {
         
     }

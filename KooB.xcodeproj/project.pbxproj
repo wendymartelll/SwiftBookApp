@@ -221,7 +221,6 @@
 				9C3019F019D5217D00DFD3E3 /* KBTableViewCell.xib */,
 				9C3019F219D5219700DFD3E3 /* KBUserPostedBookCell.swift */,
 				04C0390519E7AC13004BBBDF /* KBSearchResult.swift */,
-				9C91B59219D62ED7001E9899 /* Objective C files */,
 				9C70192219CE6E04005D775A /* AppDelegate.swift */,
 				9C70194B19CE6FF0005D775A /* KBTabBarController.swift */,
 				9C3019E319D51F7D00DFD3E3 /* KBPostBookViewController.swift */,
@@ -244,6 +243,7 @@
 				9C70194419CE6EA5005D775A /* KBConstants.swift */,
 				9C70196119CF2621005D775A /* KoobBook.swift */,
 				9C3019EC19D5213A00DFD3E3 /* KBTopBooksComputer.swift */,
+				9C91B59219D62ED7001E9899 /* Objective C files */,
 				9C3019EB19D5212A00DFD3E3 /* Custom Segues */,
 				9C70192019CE6E04005D775A /* Supporting Files */,
 			);
