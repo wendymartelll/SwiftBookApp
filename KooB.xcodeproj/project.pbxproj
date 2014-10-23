@@ -54,6 +54,10 @@
 		B1FD6C6B19F3AF5A00AAACD1 /* KBBooksListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FD6C6A19F3AF5A00AAACD1 /* KBBooksListViewController.swift */; };
 		B1FD6C6D19F3B0DF00AAACD1 /* KBBooksListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FD6C6C19F3B0DF00AAACD1 /* KBBooksListTableViewController.swift */; };
 		B1FD6C6F19F3B4CA00AAACD1 /* KBTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FD6C6E19F3B4CA00AAACD1 /* KBTableViewCell.swift */; };
+		DA02AD2019F87F690025BCB5 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA02AD1F19F87F690025BCB5 /* AudioToolbox.framework */; };
+		DA02AD2219F87F820025BCB5 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA02AD2119F87F820025BCB5 /* CoreLocation.framework */; };
+		DA02AD2419F87FA80025BCB5 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DA02AD2319F87FA80025BCB5 /* libz.dylib */; };
+		DA02AD2619F87FD70025BCB5 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA02AD2519F87FD70025BCB5 /* StoreKit.framework */; };
 		DA8C7E0419F45BDD000F84DA /* bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA8C7E0219F45BDD000F84DA /* bolts.framework */; };
 		DA8C7E0519F45BDD000F84DA /* facebooksdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA8C7E0319F45BDD000F84DA /* facebooksdk.framework */; };
 		DA8C7E0919F45BF6000F84DA /* bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA8C7E0619F45BF6000F84DA /* bolts.framework */; };
@@ -130,6 +134,10 @@
 		B1FD6C6A19F3AF5A00AAACD1 /* KBBooksListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KBBooksListViewController.swift; path = ../KBBooksListViewController.swift; sourceTree = "<group>"; };
 		B1FD6C6C19F3B0DF00AAACD1 /* KBBooksListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KBBooksListTableViewController.swift; path = ../KBBooksListTableViewController.swift; sourceTree = "<group>"; };
 		B1FD6C6E19F3B4CA00AAACD1 /* KBTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KBTableViewCell.swift; path = ../KBTableViewCell.swift; sourceTree = "<group>"; };
+		DA02AD1F19F87F690025BCB5 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		DA02AD2119F87F820025BCB5 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		DA02AD2319F87FA80025BCB5 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		DA02AD2519F87FD70025BCB5 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		DA8C7E0219F45BDD000F84DA /* bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = bolts.framework; path = Frameworks/facebooksdk/bolts.framework; sourceTree = "<group>"; };
 		DA8C7E0319F45BDD000F84DA /* facebooksdk.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = facebooksdk.framework; path = Frameworks/facebooksdk/facebooksdk.framework; sourceTree = "<group>"; };
 		DA8C7E0619F45BF6000F84DA /* bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = bolts.framework; path = "Frameworks/parse-library/bolts.framework"; sourceTree = "<group>"; };
@@ -142,18 +150,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C8F7CD119D13B7A00BCD161 /* SystemConfiguration.framework in Frameworks */,
+				DA02AD2619F87FD70025BCB5 /* StoreKit.framework in Frameworks */,
+				9C8F7CD219D13B8000BCD161 /* Security.framework in Frameworks */,
+				9C8F7CDD19D13BDA00BCD161 /* QuartzCore.framework in Frameworks */,
+				9C8F7CDB19D13BD100BCD161 /* MobileCoreServices.framework in Frameworks */,
+				DA02AD2419F87FA80025BCB5 /* libz.dylib in Frameworks */,
+				DA02AD2219F87F820025BCB5 /* CoreLocation.framework in Frameworks */,
+				9C8F7CDF19D13BE400BCD161 /* CoreGraphics.framework in Frameworks */,
+				9C8F7CD519D13BA200BCD161 /* CFNetwork.framework in Frameworks */,
+				DA02AD2019F87F690025BCB5 /* AudioToolbox.framework in Frameworks */,
 				DA8C7E0919F45BF6000F84DA /* bolts.framework in Frameworks */,
 				DA8C7E0A19F45BF6000F84DA /* parse.framework in Frameworks */,
 				DA8C7E0B19F45BF6000F84DA /* parsefacebookutils.framework in Frameworks */,
 				DA8C7E0419F45BDD000F84DA /* bolts.framework in Frameworks */,
 				DA8C7E0519F45BDD000F84DA /* facebooksdk.framework in Frameworks */,
-				9C8F7CD519D13BA200BCD161 /* CFNetwork.framework in Frameworks */,
-				9C8F7CD219D13B8000BCD161 /* Security.framework in Frameworks */,
-				9C8F7CD119D13B7A00BCD161 /* SystemConfiguration.framework in Frameworks */,
 				9C70196419CF2643005D775A /* MapKit.framework in Frameworks */,
-				9C8F7CDF19D13BE400BCD161 /* CoreGraphics.framework in Frameworks */,
-				9C8F7CDD19D13BDA00BCD161 /* QuartzCore.framework in Frameworks */,
-				9C8F7CDB19D13BD100BCD161 /* MobileCoreServices.framework in Frameworks */,
 				9C8F7CD919D13BBB00BCD161 /* Foundation.framework in Frameworks */,
 				9C8F7CD719D13BB100BCD161 /* UIKit.framework in Frameworks */,
 			);
@@ -181,6 +193,10 @@
 		9C70191419CE6E04005D775A = {
 			isa = PBXGroup;
 			children = (
+				DA02AD2519F87FD70025BCB5 /* StoreKit.framework */,
+				DA02AD2319F87FA80025BCB5 /* libz.dylib */,
+				DA02AD2119F87F820025BCB5 /* CoreLocation.framework */,
+				DA02AD1F19F87F690025BCB5 /* AudioToolbox.framework */,
 				9C70191F19CE6E04005D775A /* KooB */,
 				9C70193719CE6E04005D775A /* KooBTests */,
 				9C70191E19CE6E04005D775A /* Products */,
@@ -545,6 +561,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CLANG_X86_VECTOR_INSTRUCTIONS = default;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/andreaborghi/Downloads/parse-library-1",
@@ -600,6 +617,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CLANG_X86_VECTOR_INSTRUCTIONS = default;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/andreaborghi/Downloads/parse-library-1",

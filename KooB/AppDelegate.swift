@@ -17,7 +17,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //PFFacebookUtils.initializeFacebook()
         // Override point for customization after application launch.
         Parse.setApplicationId("JNhafPk76vP2VgQLa8RRnl78nfflQqkqx0ymGCM0", clientKey:"uEXBWmTyi9wpjRACN7gflO3ijcsgpWeYejXszoqv")
+        
         setupNavigationBarGlobal()
+        
         return true
     }
     

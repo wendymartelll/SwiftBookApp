@@ -9,7 +9,7 @@
 import Foundation
 
 class KBTopBooksComputer {
-    var topBooks: [KoobBook]?
+    var topBooks: [KoobBook] = []
     let categories: [String]
     
     init(categories:[String]) {
@@ -36,7 +36,7 @@ class KBTopBooksComputer {
         query.getFirstObjectInBackgroundWithBlock { (object: PFObject!, error: NSError!) -> Void in
             if error == nil {
                 let currentBook = KoobBook(PFObject: object)
-                self.topBooks!.append(currentBook)
+                self.topBooks.append(currentBook)
                 // Notification?
             }
         }

@@ -177,7 +177,7 @@ class KBMapViewController: UIViewController, CLLocationManagerDelegate, MKMapVie
             if !segue.isEmpty || segue == "showBook" {
                 var bdvc = viewController as KBBooksDetailsViewController
                 //bdvc.copyobj
-                bdvc.title = book?.title
+                bdvc.title = book?.bookTitle
             }
         }
     }

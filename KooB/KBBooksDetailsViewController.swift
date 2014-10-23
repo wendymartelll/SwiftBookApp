@@ -20,21 +20,58 @@ class KBBooksDetailsViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var back: UILabel!
     @IBOutlet weak var smallMapView: MKMapView!
     var copyob: PFObject!
+    var book: KoobBook!
     var geopoint: PFGeoPoint!
     
     convenience init(koobBook: KoobBook) {
         self.init()
         copyob = koobBook.object
+        self.book = koobBook
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        bookname.text = (copyob.objectForKey("BookName") as String)
-        price.text = (copyob.objectForKey("Price") as String)
-        author.text = (copyob.objectForKey("AuthorName") as String)
-        condition.text = (copyob.objectForKey("Condition") as String)
+//        bookname.text = (copyob.objectForKey("BookName") as String)
+//        price.text = (copyob.objectForKey("Price") as String)
+//        author.text = (copyob.objectForKey("AuthorName") as String)
+//        condition.text = (copyob.objectForKey("Condition") as String)
+        
+//        self.bookname.text = self.book.bookTitle
+//        self.price.text = NSString(format: "%.2f", self.book.price)
+//        self.author.text = self.book.author
+//        self.condition.text = (self.book.condition as String)
+        
+        let thisBook: KoobBook = KoobBook(PFObject: copyob)
+        
+        self.bookname.text = thisBook.bookTitle
+        self.author.text = thisBook.author
+        self.price.text = NSString(format: "%.2f", thisBook.price)
+        self.condition.text = thisBook.getStringCondition()
+        
+        
+        // Use this if receive data from \copyob\ object
+//        if let tempBookName = (copyob.objectForKey("BookName") as? String) {
+//            self.bookname.text = tempBookName
+//        }
+//        
+//        if let tempAuthor = (copyob.objectForKey("AuthorName") as? String) {
+//            self.author.text = tempAuthor
+//        }
+//        
+//        if let tempPrice = (copyob.objectForKey("Price") as? Double) {
+//            self.price.text = NSString(format: "%.2f", tempPrice)
+//        }
+//        
+//        if let tempCondition = (copyob.objectForKey("Condition") as? String){
+//            self.condition.text = tempCondition
+//        }
+//        if let tempCondition = (copyob.objectForKey("Condition") as? String){
+//            self.condition.text = tempCondition
+//        }
+
         
         let theImage: PFFile? = (copyob.objectForKey("image") as? PFFile)
+        //let theImage: PFImageView? = self.book.picture
         
         let imageData: NSData = theImage!.getData()
         
@@ -46,17 +83,20 @@ class KBBooksDetailsViewController: UIViewController, UIScrollViewDelegate {
         
         back.backgroundColor = KBBooksDetailsViewController.isWallPixel(cover.image!, x: 200, y: 120)
         
-        let thisBook: KoobBook = KoobBook(PFObject: copyob)
-        
-        let thisBookLocation: CLLocationCoordinate2D = CLLocationCoordinate2DMake(thisBook.geopoint!.latitude, thisBook.geopoint!.longitude)
-        
-        if (thisBookLocation.latitude == 0 && thisBookLocation.longitude ==  0) {
-            smallMapView.hidden = true
+        // optionals...
+        if (thisBook.geopoint != nil) {
+            
+            let thisBookLocation: CLLocationCoordinate2D = CLLocationCoordinate2DMake(thisBook.geopoint!.latitude, thisBook.geopoint!.longitude)
+            
+            if (thisBookLocation.latitude == 0 && thisBookLocation.longitude ==  0) {
+                smallMapView.hidden = true
+            }
+            
         } else {
             setupMapLayer()
             smallMapView.showAnnotations(NSArray(object: thisBook), animated: false)
         }
-        
+
         scroll.delegate = self
     }
     

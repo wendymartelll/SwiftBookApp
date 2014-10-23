@@ -80,12 +80,12 @@ class KBBooksListTableViewController: PFQueryTableViewController {
         if (segue.identifier == "CatagDetail") {
             let destViewController: KBBooksDetailsViewController = segue.destinationViewController as KBBooksDetailsViewController
             
-            var object: PFObject? = nil
+            var object: PFObject
             
             let indexPath = tableView.indexPathForSelectedRow()
             
-            object! = objects[indexPath!.row] as PFObject
-            //destViewController.copyob = object
+            object = objects[indexPath!.row] as PFObject
+            destViewController.copyob = object
         }
     }
     

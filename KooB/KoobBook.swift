@@ -29,7 +29,6 @@ class KoobBook: NSObject, MKAnnotation {
         }
     }
     var radius: Double?
-    var title: String = ""
     var subtitle: String = ""
     
     // Parse variables
@@ -50,16 +49,62 @@ class KoobBook: NSObject, MKAnnotation {
         
         anObject.fetchIfNeeded()
         
+        
         self.object = anObject
-        self.geopoint = (anObject.objectForKey("Location") as? PFGeoPoint)
-        self.user = (anObject.objectForKey("User") as? PFUser)
-        self.title = (anObject.objectForKey("BookName") as String)
-        self.subtitle = (anObject.objectForKey("sellerName") as? String)!
-        self.author = (anObject.objectForKey("AuthorName") as String)
+
+        // In \object\ there is no "user" key so get rid of it
+        //self.user = (anObject.objectForKey("User") as? PFUser)
+        
+        
+        // Since some entries in our database do not have some value - we have to check optionals
+        if let tempGeopoint = (anObject.objectForKey("Location") as? PFGeoPoint) {
+            self.geopoint = tempGeopoint
+        } else {
+            self.geopoint = PFGeoPoint(latitude: 0, longitude: 0)
+        }
+        if let tempBookName = (anObject.objectForKey("BookName") as? String) {
+            self.bookTitle = tempBookName
+        }
+
+        if let tempSubtitle = (anObject.objectForKey("sellerName") as? String) {
+            self.subtitle = tempSubtitle
+        }
+
+        if let tempAuthor = (anObject.objectForKey("AuthorName") as? String) {
+            self.author = tempAuthor
+        }
+
         // Condition?
-        self.price = (anObject.objectForKey("Price") as Double)
-        self.subject = (anObject.objectForKey("Subject") as String)
-        self.picture = (anObject.objectForKey("image") as PFImageView)
-        self.radius = (anObject.objectForKey("Radius") as Double)
+        if let tempCondition = (anObject.objectForKey("Condition") as? String) {
+            
+            switch tempCondition {
+                case "Like-New": self.condition = .good
+                case "Heavily-Used": self.condition = .bad
+                case "Average": self.condition = .average;
+            default: self.condition = .average;
+            }
+        }
+        
+        if let tempPrice = (anObject.objectForKey("Price") as? Double) {
+            self.price = tempPrice
+        }
+        if let tempSubject = (anObject.objectForKey("Subject") as? String) {
+            self.subject = tempSubject
+        }
+        if let tempPicture = (anObject.objectForKey("image") as? PFImageView) {
+            self.picture = tempPicture
+        }
+        if let tempRadius = (anObject.objectForKey("Radius") as? Double) {
+            self.radius = tempRadius
+        }
+
+    }
+    
+    func getStringCondition() -> String {
+        switch self.condition {
+        case .bad: return "Heavily Used"
+        case .good: return "Like New"
+        case .average: return "Average"
+        }
     }
 }
