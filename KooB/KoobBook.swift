@@ -49,12 +49,12 @@ class KoobBook: NSObject, MKAnnotation {
         
         anObject.fetchIfNeeded()
         
-        
         self.object = anObject
 
         // In \object\ there is no "user" key so get rid of it
-        //self.user = (anObject.objectForKey("User") as? PFUser)
-        
+        if let user = anObject.objectForKey("User") as? PFUser {
+            self.user = user
+        }
         
         // Since some entries in our database do not have some value - we have to check optionals
         if let tempGeopoint = (anObject.objectForKey("Location") as? PFGeoPoint) {
@@ -62,16 +62,17 @@ class KoobBook: NSObject, MKAnnotation {
         } else {
             self.geopoint = PFGeoPoint(latitude: 0, longitude: 0)
         }
-        if let tempBookName = (anObject.objectForKey("BookName") as? String) {
-            self.bookTitle = tempBookName
+        
+        if let title = (anObject.objectForKey("BookName") as? String) {
+            self.bookTitle = title
         }
 
-        if let tempSubtitle = (anObject.objectForKey("sellerName") as? String) {
-            self.subtitle = tempSubtitle
+        if let subtitle = (anObject.objectForKey("sellerName") as? String) {
+            self.subtitle = subtitle
         }
 
-        if let tempAuthor = (anObject.objectForKey("AuthorName") as? String) {
-            self.author = tempAuthor
+        if let author = (anObject.objectForKey("AuthorName") as? String) {
+            self.author = author
         }
 
         // Condition?
@@ -85,17 +86,18 @@ class KoobBook: NSObject, MKAnnotation {
             }
         }
         
-        if let tempPrice = (anObject.objectForKey("Price") as? Double) {
-            self.price = tempPrice
+        if let price = (anObject.objectForKey("Price") as? Double) {
+            self.price = price
         }
-        if let tempSubject = (anObject.objectForKey("Subject") as? String) {
-            self.subject = tempSubject
+        
+        if let subject = (anObject.objectForKey("Subject") as? String) {
+            self.subject = subject
         }
-        if let tempPicture = (anObject.objectForKey("image") as? PFImageView) {
-            self.picture = tempPicture
+        if let picture = (anObject.objectForKey("image") as? PFImageView) {
+            self.picture = picture
         }
-        if let tempRadius = (anObject.objectForKey("Radius") as? Double) {
-            self.radius = tempRadius
+        if let radius = (anObject.objectForKey("Radius") as? Double) {
+            self.radius = radius
         }
 
     }
@@ -105,6 +107,7 @@ class KoobBook: NSObject, MKAnnotation {
         case .bad: return "Heavily Used"
         case .good: return "Like New"
         case .average: return "Average"
+        
         }
     }
 }
