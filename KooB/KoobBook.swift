@@ -50,16 +50,42 @@ class KoobBook: NSObject, MKAnnotation {
         
         anObject.fetchIfNeeded()
         
-        self.object = anObject
-        self.geopoint = (anObject.objectForKey("Location") as? PFGeoPoint)
-        self.user = (anObject.objectForKey("User") as? PFUser)
-        self.title = (anObject.objectForKey("BookName") as String)
-        self.subtitle = (anObject.objectForKey("sellerName") as? String)!
-        self.author = (anObject.objectForKey("AuthorName") as String)
-        // Condition?
-        self.price = (anObject.objectForKey("Price") as Double)
-        self.subject = (anObject.objectForKey("Subject") as String)
-        self.picture = (anObject.objectForKey("image") as PFImageView)
-        self.radius = (anObject.objectForKey("Radius") as Double)
+        object = anObject
+        
+        if let point = anObject.objectForKey("Location") as? PFGeoPoint {
+            geopoint = point
+        }
+        
+        if let user = anObject.objectForKey("User") as? PFUser {
+            self.user = user
+        }
+        
+        if let title = anObject.objectForKey("BookName") as? String {
+            self.title = title
+        }
+        
+        if let subtitle = anObject.objectForKey("sellerName") as? String {
+            self.subtitle = subtitle
+        }
+        
+        if let author = anObject.objectForKey("AuthorName") as? String {
+            self.author = author
+        }
+        
+        if let price = anObject.objectForKey("Price") as? Double {
+            self.price = price
+        }
+        
+        if let subject = anObject.objectForKey("Subject") as? String {
+            self.subject = subject
+        }
+        
+        if let picture = anObject.objectForKey("image") as? PFImageView {
+            self.picture = picture
+        }
+        
+        if let radius = anObject.objectForKey("Radius") as? Double {
+            self.radius = radius
+        }
     }
 }
