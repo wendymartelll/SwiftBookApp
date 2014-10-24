@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 class KBTopBookCollectionViewCell: UICollectionViewCell {
-    var imageView: UIImageView
+    var imageView: UIImageView!
     var image: UIImage?
     var loading: Bool = false
     
@@ -22,7 +22,7 @@ class KBTopBookCollectionViewCell: UICollectionViewCell {
     }
     
     required init(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: aDecoder)
     }
     
     func setCover(forBook: KoobBook?) {

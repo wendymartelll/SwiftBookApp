@@ -6,7 +6,9 @@
 //  Copyright (c) 2014 Developers Guild. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+@objc(KBPresentDetailsViewSegue)
 
 class KBPresentDetailsViewSegue: UIStoryboardSegue {
     var originatingPoint: CGPoint?

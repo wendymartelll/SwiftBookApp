@@ -41,12 +41,15 @@ class KBBooksDetailsViewController: UIViewController, UIScrollViewDelegate {
 //        self.author.text = self.book.author
 //        self.condition.text = (self.book.condition as String)
         
-        let thisBook: KoobBook = KoobBook(PFObject: copyob)
         
-        self.bookname.text = thisBook.bookTitle
-        self.author.text = thisBook.author
-        self.price.text = NSString(format: "%.2f", thisBook.price)
-        self.condition.text = thisBook.getStringCondition()
+        if self.book == nil{
+            self.book = KoobBook(PFObject: copyob)
+        }
+        
+        self.bookname.text = book.bookTitle
+        self.author.text = book.author
+        self.price.text = NSString(format: "%.2f", book.price)
+        self.condition.text = book.getStringCondition()
         
         
         // Use this if receive data from \copyob\ object
@@ -70,23 +73,20 @@ class KBBooksDetailsViewController: UIViewController, UIScrollViewDelegate {
 //        }
 
         
-        let theImage: PFFile? = (copyob.objectForKey("image") as? PFFile)
-        //let theImage: PFImageView? = self.book.picture
-        
-        let imageData: NSData = theImage!.getData()
-        
-        if (theImage == nil) {
+        if (book.picture == nil) {
             cover.image = UIImage(named: "wallb")
         } else {
-            cover.image = UIImage(data: imageData)
+            cover.image = UIImage(data: book.picture!.getData())
         }
+        
+        
         
         back.backgroundColor = KBBooksDetailsViewController.isWallPixel(cover.image!, x: 200, y: 120)
         
         // optionals...
-        if (thisBook.geopoint != nil) {
+        if (book.geopoint != nil) {
             
-            let thisBookLocation: CLLocationCoordinate2D = CLLocationCoordinate2DMake(thisBook.geopoint!.latitude, thisBook.geopoint!.longitude)
+            let thisBookLocation: CLLocationCoordinate2D = CLLocationCoordinate2DMake(book.geopoint!.latitude, book.geopoint!.longitude)
             
             if (thisBookLocation.latitude == 0 && thisBookLocation.longitude ==  0) {
                 smallMapView.hidden = true
@@ -94,7 +94,7 @@ class KBBooksDetailsViewController: UIViewController, UIScrollViewDelegate {
             
         } else {
             setupMapLayer()
-            smallMapView.showAnnotations(NSArray(object: thisBook), animated: false)
+            smallMapView.showAnnotations(NSArray(object: book), animated: false)
         }
 
         scroll.delegate = self

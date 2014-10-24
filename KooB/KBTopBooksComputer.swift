@@ -17,12 +17,25 @@ class KBTopBooksComputer {
         self.categories = categories
     }
     
-    func getTopBooksAsync(completionBlock:(topBooks:[KoobBook]?)->()) {
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), { () -> Void in
+//    func getTopBooksAsync(completionBlock:(topBooks:[KoobBook])->Void) {
+//        let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
+//        dispatch_async(dispatch_get_global_queue(priority, 0), { () -> Void in
+//            self.getTopBooksFromDatabase()
+//        })
+//        
+//        //completionBlock(topBooks: topBooks)
+//        completionBlock(topBooks: self.topBooks)
+//    }
+    
+    func getTopBooksAsync(completionBlock:(topBooks:[KoobBook])->Void) {
+        let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
+        dispatch_async(dispatch_get_global_queue(priority, 0)) {
             self.getTopBooksFromDatabase()
-        })
-        
-        completionBlock(topBooks: topBooks)
+            
+        dispatch_async(dispatch_get_main_queue()) {
+        completionBlock(topBooks: self.topBooks)
+            }
+        }
     }
     
     func getTopBooksFromDatabase() {
@@ -33,13 +46,15 @@ class KBTopBooksComputer {
     
     func queryForTopBook(#category: String) {
         let query = PFQuery(className: "Books_DataBase")
-        query.whereKey("Subject", equalTo: category as NSString)
+        query.whereKey("Subject", equalTo: category)
         query.getFirstObjectInBackgroundWithBlock { (object: PFObject!, error: NSError!) -> Void in
             if error == nil {
                 var currentBook = KoobBook(PFObject: object)
 
                 self.topBooks.append(currentBook)
                 // Notification?
+            } else {
+                println("Can not Find any book")
             }
         }
     }

@@ -33,7 +33,7 @@ class KoobBook: NSObject, MKAnnotation {
     
     // Parse variables
     var object: PFObject?
-    var picture: PFImageView?
+    var picture: PFFile?
     var geopoint: PFGeoPoint?
     var user: PFUser?
     
@@ -93,7 +93,7 @@ class KoobBook: NSObject, MKAnnotation {
         if let subject = (anObject.objectForKey("Subject") as? String) {
             self.subject = subject
         }
-        if let picture = (anObject.objectForKey("image") as? PFImageView) {
+        if let picture = (anObject.objectForKey("image") as? PFFile) {
             self.picture = picture
         }
         if let radius = (anObject.objectForKey("Radius") as? Double) {

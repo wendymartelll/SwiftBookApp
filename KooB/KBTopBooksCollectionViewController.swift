@@ -14,7 +14,7 @@ class KBTopBooksCollectionViewController: UICollectionViewController {
     var originatingPoint: CGPoint?
     var topBooks = [KoobBook]?()
     var computer = KBTopBooksComputer?()
-    let reuseIdentifier = "Cell"
+    let reuseIdentifier = "CollectionCell"
     //let categories = ["Accounting","Administration of Justice","Anthropology","Arts","Astronomy","Automotive Technology","Biology","Business","Cantonese","Career Life Planning","Chemistry","Child Development","Computer Aided Design","Computer Information System","Counseling","Dance","Economics","Education","Engeineering","ESL","English","Enviromental Science","Film and Television","French","Geography","Geology","German","Guidance","Health Technology","Health","Hindi","History","Human Development","Humanities","Intercultural Studies","International Studies","Italian","Japanese","Journalism","Korean","Language Arts","Learning Assistance","Librarty","Linguistics","Mandarin","Manufacturing","Mathematics","Meterology","Music","Nursing","Nutrition","Paralegal","Persian","Philosophy","Photography","Physical Education","Physics","Political Science","Pyschology","Reading","Real Estate","Russian","Sign Language","Skills","Social Science","Sociology","Spanish","Speech","Theater Arts","Vietnamese","Women Studies","Misc"]
     
     override func viewDidLoad() {
@@ -33,7 +33,7 @@ class KBTopBooksCollectionViewController: UICollectionViewController {
             if computer == nil {
                 computer = KBTopBooksComputer(categories: KBBooksListViewController.allCategories())
             }
-            computer!.getTopBooksAsync({ (topBooks) -> () in
+            computer!.getTopBooksAsync({ (topBooks: [KoobBook]) -> Void in
                 self.topBooks = topBooks
             })
         } else {
@@ -65,7 +65,18 @@ class KBTopBooksCollectionViewController: UICollectionViewController {
         if segue.identifier == "ShowDetail" {
             let destinationViewController = segue.destinationViewController as KBBooksDetailsViewController
             let indexPath = sender as NSIndexPath
-            let object = topBooks![indexPath.row]
+            let selectedBook = topBooks![indexPath.row]
+            
+            destinationViewController.book = selectedBook
+            destinationViewController.title = selectedBook.bookTitle
+            
+            // Prepare for the custom segue
+            self.collectionView.cellForItemAtIndexPath(indexPath)?.center
+            let selectedCellCenter: CGPoint = self.collectionView.cellForItemAtIndexPath(indexPath)!.center
+            let cellCenterInSuperview: CGPoint = self.parentViewController!.view.convertPoint(selectedCellCenter, fromView: self.collectionView)
+            (segue as KBPresentDetailsViewSegue).originatingPoint = cellCenterInSuperview
+            self.originatingPoint = cellCenterInSuperview;
+            
         }
     }
     
@@ -79,5 +90,16 @@ class KBTopBooksCollectionViewController: UICollectionViewController {
         }
         
         return cell
+    }
+    
+    override func collectionView(collectionView: UICollectionView, shouldSelectItemAtIndexPath indexPath: NSIndexPath) -> Bool {
+        if (indexPath.row < self.topBooks?.count)
+        {
+            return true
+        }
+        else {
+            self.collectionView.reloadData()
+            return false
+        }
     }
 }

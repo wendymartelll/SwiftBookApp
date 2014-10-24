@@ -35,7 +35,6 @@
 		9C70195719CE72DF005D775A /* KBSignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C70195619CE72DF005D775A /* KBSignupViewController.swift */; };
 		9C70196219CF2621005D775A /* KoobBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C70196119CF2621005D775A /* KoobBook.swift */; };
 		9C70196419CF2643005D775A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C70196319CF2643005D775A /* MapKit.framework */; };
-		9C8F712319D44F1B00CF6FDB /* Main_Universal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C8F712219D44F1B00CF6FDB /* Main_Universal.storyboard */; };
 		9C8F7CD119D13B7A00BCD161 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C8F7CCD19D13B5100BCD161 /* SystemConfiguration.framework */; };
 		9C8F7CD219D13B8000BCD161 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C8F7CCF19D13B6200BCD161 /* Security.framework */; };
 		9C8F7CD519D13BA200BCD161 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C8F7CD319D13B9900BCD161 /* CFNetwork.framework */; };
@@ -63,6 +62,7 @@
 		DA8C7E0919F45BF6000F84DA /* bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA8C7E0619F45BF6000F84DA /* bolts.framework */; };
 		DA8C7E0A19F45BF6000F84DA /* parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA8C7E0719F45BF6000F84DA /* parse.framework */; };
 		DA8C7E0B19F45BF6000F84DA /* parsefacebookutils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA8C7E0819F45BF6000F84DA /* parsefacebookutils.framework */; };
+		DAE3668C19FA2359000BD013 /* Main_Universal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C8F712219D44F1B00CF6FDB /* Main_Universal.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -391,7 +391,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C3019F119D5217D00DFD3E3 /* KBTableViewCell.xib in Resources */,
-				9C8F712319D44F1B00CF6FDB /* Main_Universal.storyboard in Resources */,
+				DAE3668C19FA2359000BD013 /* Main_Universal.storyboard in Resources */,
 				9C70192F19CE6E04005D775A /* LaunchScreen.xib in Resources */,
 				9C70192C19CE6E04005D775A /* Images.xcassets in Resources */,
 			);
