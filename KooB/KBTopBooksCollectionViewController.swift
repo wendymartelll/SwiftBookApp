@@ -9,13 +9,18 @@
 import Foundation
 import UIKit
 
+extension Array {
+    func contains<T where T : Equatable>(obj: T) -> Bool {
+        return self.filter({$0 as? T == obj}).count > 0
+    }
+}
+
 class KBTopBooksCollectionViewController: UICollectionViewController {
     @IBOutlet var collView: UICollectionView!
     var originatingPoint: CGPoint?
     var topBooks = [KoobBook]?()
     var computer = KBTopBooksComputer?()
     let reuseIdentifier = "CollectionCell"
-    //let categories = ["Accounting","Administration of Justice","Anthropology","Arts","Astronomy","Automotive Technology","Biology","Business","Cantonese","Career Life Planning","Chemistry","Child Development","Computer Aided Design","Computer Information System","Counseling","Dance","Economics","Education","Engeineering","ESL","English","Enviromental Science","Film and Television","French","Geography","Geology","German","Guidance","Health Technology","Health","Hindi","History","Human Development","Humanities","Intercultural Studies","International Studies","Italian","Japanese","Journalism","Korean","Language Arts","Learning Assistance","Librarty","Linguistics","Mandarin","Manufacturing","Mathematics","Meterology","Music","Nursing","Nutrition","Paralegal","Persian","Philosophy","Photography","Physical Education","Physics","Political Science","Pyschology","Reading","Real Estate","Russian","Sign Language","Skills","Social Science","Sociology","Spanish","Speech","Theater Arts","Vietnamese","Women Studies","Misc"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,20 +29,39 @@ class KBTopBooksCollectionViewController: UICollectionViewController {
         collView.showsHorizontalScrollIndicator = false
         collView.showsVerticalScrollIndicator = false
         collView.registerClass(KBTopBookCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-        animateTopBooksEntrance()
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "reload", name:BookCoverDownloaded, object: nil)
+        
         if PFUser.currentUser() != nil {
             if computer == nil {
                 computer = KBTopBooksComputer(categories: KBBooksListViewController.allCategories())
             }
             computer!.getTopBooksAsync({ (topBooks: [KoobBook]) -> Void in
                 self.topBooks = topBooks
+                println("The array contains \(self.topBooks?.count)")
             })
         } else {
             println("No user")
+        }
+        
+        animateTopBooksEntrance()
+    }
+    
+    func reload() {
+        println("Reload called")
+        var differenceArray = computer!.topBooks
+        
+        for book in differenceArray {
+            if topBooks!.contains(book) == false {
+                topBooks = differenceArray
+                
+                for cell in collectionView.visibleCells() {
+                    let topCell = cell as KBTopBookCollectionViewCell
+                    if topCell.loaded == false {
+                        let indexPath = collectionView.indexPathForCell(topCell)
+                        collectionView.reloadItemsAtIndexPaths(NSArray(object: indexPath!))
+                    }
+                }
+            }
         }
     }
     
@@ -93,12 +117,9 @@ class KBTopBooksCollectionViewController: UICollectionViewController {
     }
     
     override func collectionView(collectionView: UICollectionView, shouldSelectItemAtIndexPath indexPath: NSIndexPath) -> Bool {
-        if (indexPath.row < self.topBooks?.count)
-        {
+        if (indexPath.row < self.topBooks?.count) {
             return true
-        }
-        else {
-            self.collectionView.reloadData()
+        } else {
             return false
         }
     }

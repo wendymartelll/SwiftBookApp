@@ -13,6 +13,7 @@ class KBTopBookCollectionViewCell: UICollectionViewCell {
     var imageView: UIImageView!
     var image: UIImage?
     var loading: Bool = false
+    var loaded: Bool = false
     
     override init(frame: CGRect) {
         imageView = UIImageView()
@@ -32,6 +33,7 @@ class KBTopBookCollectionViewCell: UICollectionViewCell {
                 self.imageView.image = image
                 self.setNeedsLayout()
                 self.loading = false
+                self.loaded = true
             })
         } else {
             imageView.image = UIImage(named: "BookLoad")

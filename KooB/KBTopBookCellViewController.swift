@@ -11,8 +11,10 @@ import Foundation
 class KBTopBookCellViewController: UIViewController {
     class func imageForBook(#book: KoobBook, completionBlock:(image: UIImage)->()) {
         let bookAsObject = book.object
-        let theImage = bookAsObject?.objectForKey("image") as PFFile
+        let theImage = bookAsObject!.objectForKey("image") as PFFile
         theImage.getDataInBackgroundWithBlock { (imageData, error) -> Void in
+            println("Get data in background with block called")
+            
             if error == nil {
                 completionBlock(image: UIImage(data: imageData)!)
             }

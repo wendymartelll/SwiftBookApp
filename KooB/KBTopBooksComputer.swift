@@ -9,38 +9,32 @@
 import Foundation
 
 class KBTopBooksComputer {
-
+    var count: Int {
+        didSet {
+            println("The array is now \(count)")
+            NSNotificationCenter.defaultCenter().postNotificationName(BookCoverDownloaded, object: nil)
+        }
+    }
+    
     var topBooks = [KoobBook]()
     let categories: [String]
     
     init(categories:[String]) {
         self.categories = categories
+        count = 0
     }
     
-//    func getTopBooksAsync(completionBlock:(topBooks:[KoobBook])->Void) {
-//        let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
-//        dispatch_async(dispatch_get_global_queue(priority, 0), { () -> Void in
-//            self.getTopBooksFromDatabase()
-//        })
-//        
-//        //completionBlock(topBooks: topBooks)
-//        completionBlock(topBooks: self.topBooks)
-//    }
-    
-    func getTopBooksAsync(completionBlock:(topBooks:[KoobBook])->Void) {
-        let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
+    func getTopBooksAsync(completionBlock:(topBooks:[KoobBook]) -> Void) {
+        let priority = DISPATCH_QUEUE_PRIORITY_HIGH
         dispatch_async(dispatch_get_global_queue(priority, 0)) {
-            self.getTopBooksFromDatabase()
-            
-        dispatch_async(dispatch_get_main_queue()) {
-        completionBlock(topBooks: self.topBooks)
+            for categoryName in self.categories {
+                self.queryForTopBook(category: categoryName)
             }
-        }
-    }
-    
-    func getTopBooksFromDatabase() {
-        for categoryName in categories {
-            queryForTopBook(category: categoryName)
+            
+            dispatch_async(dispatch_get_main_queue()) {
+                completionBlock(topBooks: self.topBooks)
+                NSNotificationCenter.defaultCenter().postNotificationName(BookCoverDownloaded, object: nil)
+            }
         }
     }
     
@@ -50,11 +44,11 @@ class KBTopBooksComputer {
         query.getFirstObjectInBackgroundWithBlock { (object: PFObject!, error: NSError!) -> Void in
             if error == nil {
                 var currentBook = KoobBook(PFObject: object)
-
                 self.topBooks.append(currentBook)
-                // Notification?
+                self.count++
+                println("Found a book for \(category)")
             } else {
-                println("Can not Find any book")
+                println("Cannot find any book for \(category)")
             }
         }
     }
