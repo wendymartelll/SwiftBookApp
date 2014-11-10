@@ -19,7 +19,7 @@ class KoobBook: NSObject, MKAnnotation {
     var bookTitle: String = ""
     var author: String = ""
     var subject: String = ""
-    var price: Double = 0.0
+    var price: String = ""
     var condition: Condition = .average
     
     // Location variables
@@ -37,7 +37,7 @@ class KoobBook: NSObject, MKAnnotation {
     var geopoint: PFGeoPoint?
     var user: PFUser?
     
-    convenience init(title: String, author: String, price: Double) {
+    convenience init(title: String, author: String, price: String) {
         self.init()
         self.bookTitle = title
         self.author = author
@@ -50,7 +50,7 @@ class KoobBook: NSObject, MKAnnotation {
         anObject.fetchIfNeeded()
         
         self.object = anObject
-
+        
         // In \object\ there is no "user" key so get rid of it
         if let user = anObject.objectForKey("User") as? PFUser {
             self.user = user
@@ -66,27 +66,27 @@ class KoobBook: NSObject, MKAnnotation {
         if let title = (anObject.objectForKey("BookName") as? String) {
             self.bookTitle = title
         }
-
+        
         if let subtitle = (anObject.objectForKey("sellerName") as? String) {
             self.subtitle = subtitle
         }
-
+        
         if let author = (anObject.objectForKey("AuthorName") as? String) {
             self.author = author
         }
-
+        
         // Condition?
         if let tempCondition = (anObject.objectForKey("Condition") as? String) {
             
             switch tempCondition {
-                case "Like-New": self.condition = .good
-                case "Heavily-Used": self.condition = .bad
-                case "Average": self.condition = .average;
+            case "Like-New": self.condition = .good
+            case "Heavily-Used": self.condition = .bad
+            case "Average": self.condition = .average;
             default: self.condition = .average;
             }
         }
         
-        if let price = (anObject.objectForKey("Price") as? Double) {
+        if let price = (anObject.objectForKey("Price") as? String) {
             self.price = price
         }
         
@@ -99,7 +99,7 @@ class KoobBook: NSObject, MKAnnotation {
         if let radius = (anObject.objectForKey("Radius") as? Double) {
             self.radius = radius
         }
-
+        
     }
     
     func getStringCondition() -> String {
@@ -107,7 +107,7 @@ class KoobBook: NSObject, MKAnnotation {
         case .bad: return "Heavily Used"
         case .good: return "Like New"
         case .average: return "Average"
-        
+            
         }
     }
 }
